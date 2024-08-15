@@ -22,7 +22,7 @@ variable "use_existing_database" {
 }
 
 variable "region" {
-  description = "Region where resources will be created"
+  description = "Region where the Firestore database will be created"
   type        = string
 }
 
