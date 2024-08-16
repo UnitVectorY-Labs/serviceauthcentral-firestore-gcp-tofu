@@ -8,13 +8,10 @@ OpenTofu module for deploying ServiceAuthCentral Firestore Database
 
 ```hcl
 module "serviceauthcentral_firestore_gcp" {
-    source = "git::https://github.com/UnitVectorY-Labs/serviceauthcentral-kms-gcp-tofu.git?ref=main"
+    source = "git::https://github.com/UnitVectorY-Labs/serviceauthcentral-firestore-gcp-tofu.git?ref=main"
     name = "serviceauthcentral"
     project_id = var.project_id
-    regions = ["us-east1"]
-    region_db_names = {
-        "us-east1" = "sac-us-east1"
-    }
+    region = "us-east4"
 }
 ```
 
