@@ -5,13 +5,13 @@ variable "project_id" {
 }
 
 variable "database_name" {
-  description = "The name of the database (limited to 10 characters right now, boo)"
+  description = "The name of the database"
   type        = string
   default     = "default"
 
   validation {
-    condition     = can(regex("^[a-z](?:[-a-z0-9]{1,10}[a-z0-9])$", var.database_name))
-    error_message = "The name must start with a lowercase letter and can contain lowercase letters, numbers, and hyphens. It must be between 2 and 10 characters long."
+    condition     = can(regex("^[a-z](?:[-a-z0-9]{1,29}[a-z0-9])$", var.database_name))
+    error_message = "The name must start with a lowercase letter and can contain lowercase letters, numbers, and hyphens. It must be between 2 and 30 characters long."
   }
 }
 
