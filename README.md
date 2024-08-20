@@ -4,6 +4,19 @@
 
 OpenTofu module for deploying ServiceAuthCentral Firestore Database
 
+## Firestore Database
+
+The purpose of this module is to deploy a Firestore database for use by ServiceAuthCentral.
+
+The following indexes deployed:
+- The `authorizations` collection has an index on: audience(ASCENDING), subject(ASCENDING)
+- The `authorizations` collection has an index on: subject(ASCENDING), audience(ASCENDING)
+
+The following collections are configured to use the attribute `ttl`as a TTl for the collection:
+- `keys`
+- `loginCodes`
+- `loginStates`
+
 ## Usage
 
 ```hcl
