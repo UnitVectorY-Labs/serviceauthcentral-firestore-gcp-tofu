@@ -4,6 +4,24 @@
 
 OpenTofu module for deploying ServiceAuthCentral Firestore Database
 
+## References
+
+- [ServiceAuthCentral](https://github.com/UnitVectorY-Labs/ServiceAuthCentral) - Simplify microservice security with ServiceAuthCentral: Centralized, open-source authorization in the cloud, minus the shared secrets.
+- [ServiceAuthCentral Documentation](https://unitvectory-labs.github.io/ServiceAuthCentral/) - Documentation for ServiceAuthCentral
+- [serviceauthcentralweb](https://github.com/UnitVectorY-Labs/serviceauthcentralweb) - Web based management interface for ServiceCloudAuth
+- [serviceauthcentral-gcp-tofu](https://github.com/UnitVectorY-Labs/serviceauthcentral-gcp-tofu) - OpenTofu module for deploying a fully working ServiceAuthCentral deployment in GCP
+
+## Usage
+
+```hcl
+module "serviceauthcentral_firestore_gcp" {
+    source = "git::https://github.com/UnitVectorY-Labs/serviceauthcentral-firestore-gcp-tofu.git?ref=main"
+    database_name = "serviceauthcentral"
+    project_id = var.project_id
+    region = "us-east4"
+}
+```
+
 ## Firestore Database
 
 The purpose of this module is to deploy a Firestore database for use by ServiceAuthCentral.
@@ -16,17 +34,6 @@ The following collections are configured to use the attribute `ttl`as a TTl for 
 - `keys`
 - `loginCodes`
 - `loginStates`
-
-## Usage
-
-```hcl
-module "serviceauthcentral_firestore_gcp" {
-    source = "git::https://github.com/UnitVectorY-Labs/serviceauthcentral-firestore-gcp-tofu.git?ref=main"
-    database_name = "serviceauthcentral"
-    project_id = var.project_id
-    region = "us-east4"
-}
-```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
